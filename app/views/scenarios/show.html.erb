@@ -2,7 +2,7 @@
 
 
 <div class="card" style="width: 18rem;">
-  <img src="<%= @scenario.image %>" class="card-img-top img-thumbnail" alt="img-scenario">
+  <img src="<%= @scenario.image %>" class="card-img-top" alt="img-scenario">
   <div class="card-body">
     <h5 class="card-title"><strong>Title:</strong><%= @scenario.title %></h5>
     <p class="card-text"><strong>Description:</strong><%= @scenario.description %></p>
@@ -54,8 +54,10 @@
         <td><%= scene.description %></td>
         <td><%= scene.when %></td>
         <td><%= scene.scenario.title %></td>
-        <td><%= link_to 'Edit Scene', edit_scenario_scene_path(@scenario, scene) %></td>
-        <td><%= link_to 'Destroy Scene', [@scenario, scene], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button type="button" class="btn bg-light text-dark"><%= link_to 'Show', [@scenario, @scene] %></button></td>
+        
+        <td><button type="button" class="btn bg-secondary"><%= link_to 'Edit Scene', edit_scenario_scene_path(@scenario, scene) %></button></td>
+        <td><button type="button" class="btn bg-danger"><%= link_to 'Destroy Scene', [@scenario, scene], method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,34 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @scene.title %>
-</p>
+<div class="card" style="width: 18rem;">
+  <img src="<%= @scene.image %>" class="card-img-top" alt="img-scene">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Title: </strong><%= @scene.title %></h5>
+    <p class="card-text"><strong>Description:</strong><%= @scene.description %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Date:</strong>
+    <%= @scene.when %></li>
+    <li class="list-group-item"><strong>Scene number:</strong>
+    <%= @scene.number %></li>
+    <li class="list-group-item"><strong>Scenario:</strong>
+    <%= @scene.scenario_id %></li>
+  </ul>
+  <div class="card-body">
+  <button type="button" class="btn bg-dark"><%= link_to 'Edit', edit_scenario_scene_path(@scenario, @scene) %> </button> |
+  <button type="button" class="btn bg-dark"><%= link_to 'Back', scenario_scenes_path(@scenario) %></button>
+  </div>
+</div>
+</br></br>
+ 
 
-<p>
-  <strong>Image:</strong>
-  <img src="<%= scene.image %>" class="img-thumbnail" alt="img-scene" >
-  </p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @scene.number %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @scene.description %>
-</p>
-
-<p>
-  <strong>When:</strong>
-  <%= @scene.when %>
-</p>
-
-<p>
-  <strong>Scenario:</strong>
-  <%= @scene.scenario_id %>
-</p>
-
-<%= link_to 'Edit', edit_scenario_scene_path(@scenario, @scene) %> |
-<%= link_to 'Back', scenario_scenes_path(@scenario) %>

@@ -27,7 +27,7 @@
         <td><%= scene.scenario.title %></td>
         
         
-        
+        <td><button type="button" class="btn bg-light text-dark"><%= link_to 'Show', [@scenario, @scene] %></button></td>
         <td><button type="button" class="btn bg-secondary"><%= link_to 'Edit Scene', edit_scenario_scene_path(@scenario, scene) %></button></td>
         <td><button type="button" class="btn bg-danger"><%= link_to 'Destroy Scene', [@scenario, scene], method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       
